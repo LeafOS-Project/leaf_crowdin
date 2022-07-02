@@ -3,7 +3,7 @@
 # gerrit.py
 #
 # Helper script for processing translation patches on
-# LineageOS' gerrit
+# LeafOS' gerrit
 #
 # Copyright (C) 2019-2022 The LineageOS Project
 #

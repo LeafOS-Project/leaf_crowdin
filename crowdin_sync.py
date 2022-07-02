@@ -3,7 +3,7 @@
 # crowdin_sync.py
 #
 # Updates Crowdin source translations and pushes translations
-# directly to LineageOS' Gerrit.
+# directly to LeafOS' Gerrit.
 #
 # Copyright (C) 2014-2016 The CyanogenMod Project
 # Copyright (C) 2017-2022 The LineageOS Project
@@ -42,10 +42,10 @@ _DONE = False
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Synchronising LineageOS' translations with Crowdin"
+        description="Synchronising LeafOS' translations with Crowdin"
     )
     parser.add_argument("-u", "--username", help="Gerrit username")
-    parser.add_argument("-b", "--branch", help="LineageOS branch", required=True)
+    parser.add_argument("-b", "--branch", help="LeafOS branch", required=True)
     parser.add_argument("-c", "--config", help="Custom yaml config")
     parser.add_argument(
         "--upload-sources", action="store_true", help="Upload sources to Crowdin"

@@ -3,7 +3,7 @@
 # download.py
 #
 # Helper script for downloading translation source and
-# uploading it to LineageOS' gerrit
+# uploading it to LeafOS' gerrit
 #
 # Copyright (C) 2014-2016 The CyanogenMod Project
 # Copyright (C) 2017-2022 The LineageOS Project
@@ -165,7 +165,7 @@ def push_as_commit(
     # Push commit
     try:
         repo.git.push(
-            f"ssh://{username}@review.lineageos.org:29418/{project_name}",
+            f"ssh://{username}@review.leafos.org:29418/{project_name}",
             f"HEAD:refs/for/{branch}%topic=translation",
         )
         print("Successfully pushed!")

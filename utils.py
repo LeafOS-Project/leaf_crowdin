@@ -102,7 +102,7 @@ def get_username(args):
     if (args.gerrit or args.download or args.unzip) and username is None:
         # try getting the username from git
         msg, code = run_subprocess(
-            ["git", "config", "--get", "review.review.lineageos.org.username"],
+            ["git", "config", "--get", "review.review.leafos.org.username"],
             silent=True,
         )
         has_username = False
@@ -163,7 +163,7 @@ def check_files(files):
 
 def get_base_path(default_branch):
     base_path_branch_suffix = default_branch.replace("-", "_").replace(".", "_").upper()
-    base_path_env = f"LINEAGE_CROWDIN_BASE_PATH_{base_path_branch_suffix}"
+    base_path_env = f"LEAF_CROWDIN_BASE_PATH_{base_path_branch_suffix}"
     base_path = os.getenv(base_path_env)
     if base_path is None:
         cwd = os.getcwd()
@@ -185,7 +185,7 @@ def get_xml_files(base_path, default_branch):
     if xml_extra is None:
         sys.exit(1)
 
-    xml_snippet = load_xml(x=f"{base_path}/android/snippets/lineage.xml")
+    xml_snippet = load_xml(x=f"{base_path}/android/snippets/leaf.xml")
     if xml_snippet is not None:
         xml_files = (xml_android, xml_snippet, xml_extra)
     else:
@@ -206,7 +206,6 @@ def get_config_dict(config, default_branch):
         ]
         config_dict["files"] = [
             f"{_DIR}/config/{default_branch}.yaml",
-            f"{_DIR}/config/{default_branch}_aosp.yaml",
         ]
     if not check_files(config_dict["files"]):
         sys.exit(1)
@@ -214,5 +213,5 @@ def get_config_dict(config, default_branch):
 
 
 def get_gerrit_base_cmd(username):
-    cmd = ["ssh", "-p", "29418", f"{username}@review.lineageos.org", "gerrit"]
+    cmd = ["ssh", "-p", "29418", f"{username}@review.leafos.org", "gerrit"]
     return cmd

@@ -3,7 +3,7 @@
 # from_zip.py
 #
 # Helper script for extracting translations from one or more zips and
-# uploading them to LineageOS' gerrit
+# uploading them to LeafOS' gerrit
 #
 # Copyright (C) 2022 The LineageOS Project
 #
